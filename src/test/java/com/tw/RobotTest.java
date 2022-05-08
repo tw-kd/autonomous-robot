@@ -8,10 +8,10 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class RobotTest {
     @Test
-    void shouldBeAbleToMove() {
+    void shouldBeAbleToMove() throws ExceedingGridBoundaryException {
         Robot robot = new Robot(0, 0, Facing.N);
 
-        robot.move();
+        robot.move(1, 1);
         int actualYCoordinate = robot.getYCoordinate();
 
         assertThat(actualYCoordinate, is(equalTo(1)));

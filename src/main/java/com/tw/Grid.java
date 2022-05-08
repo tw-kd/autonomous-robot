@@ -21,10 +21,12 @@ public class Grid {
         return positions.toString();
     }
 
-    public void executeOperations() {
+    public void executeOperations() throws ExceedingGridBoundaryException {
         for (int i = 0; i < robots.length; i++) {
             for (int j = 0; j < operations[i].length(); j++) {
-                robots[i].performOperation(operations[i].charAt(j));
+                char operation = operations[i].charAt(j);
+                if (operation == 'M') robots[i].move(edgeX, edgeY);
+                else robots[i].performTurnOperation(operation);
             }
         }
     }

@@ -11,9 +11,19 @@ public class Robot {
         this.facing = facing;
     }
 
-    public void move() {
-        xCoordinate += facing.getXMovement();
-        yCoordinate += facing.getYMovement();
+    public void move(int edgeX, int edgeY) throws ExceedingGridBoundaryException {
+        int xMovement = facing.getXMovement();
+        int yMovement = facing.getYMovement();
+        if (!isValidMove(xMovement, yMovement, edgeX, edgeY)) {
+            throw new ExceedingGridBoundaryException();
+        }
+        xCoordinate += xMovement;
+        yCoordinate += yMovement;
+    }
+
+    private boolean isValidMove(int xMovement, int yMovement, int edgeX, int edgeY) {
+        return xCoordinate + xMovement <= edgeX && xCoordinate + xMovement >= 0 &&
+                yCoordinate + yMovement <= edgeY && yCoordinate + yMovement >= 0;
     }
 
     public void turnRight() {
@@ -44,10 +54,8 @@ public class Robot {
         return facing.getFacingStringValue();
     }
 
-    public void performOperation(char operation) {
-        if (operation == 'M') {
-            move();
-        } else if (operation == 'R') {
+    public void performTurnOperation(char operation) {
+        if (operation == 'R') {
             turnRight();
         } else if (operation == 'L') {
             turnLeft();
