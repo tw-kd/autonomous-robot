@@ -27,9 +27,11 @@ public class Robot {
     public int getXCoordinate() {
         return xCoordinate;
     }
+
     public int getYCoordinate() {
         return yCoordinate;
     }
+
     public Facing getFacing() {
         return facing;
     }
@@ -40,5 +42,15 @@ public class Robot {
 
     private String getFacingStringValue() {
         return facing.getFacingStringValue();
+    }
+
+    public void performOperation(char operation) {
+        if (operation == 'M') {
+            move();
+        } else if (operation == 'R') {
+            turnRight();
+        } else if (operation == 'L') {
+            turnLeft();
+        }
     }
 }

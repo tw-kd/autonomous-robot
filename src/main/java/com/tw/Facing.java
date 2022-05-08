@@ -17,6 +17,7 @@ public enum Facing {
     public int getXMovement() {
         return xMovement;
     }
+
     public int getYMovement() {
         return yMovement;
     }
@@ -26,15 +27,19 @@ public enum Facing {
             case N:
                 if (direction.equals("Right")) return E;
                 else if (direction.equals("Left")) return W;
+                break;
             case S:
-                if (direction.equals("Right")) return E;
-                else if (direction.equals("Left")) return W;
+                if (direction.equals("Right")) return W;
+                else if (direction.equals("Left")) return E;
+                break;
             case E:
                 if (direction.equals("Right")) return S;
                 else if (direction.equals("Left")) return N;
+                break;
             case W:
-                if (direction.equals("Right")) return S;
-                else if (direction.equals("Left")) return N;
+                if (direction.equals("Right")) return N;
+                else if (direction.equals("Left")) return S;
+                break;
         }
         return null;
     }
