@@ -1,4 +1,6 @@
-package com.tw;
+package com.tw.autonomusRobot;
+
+import com.tw.exceptions.ExceedingGridBoundaryException;
 
 public class Grid {
     private final int edgeX;
