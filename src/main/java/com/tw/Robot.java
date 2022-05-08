@@ -33,4 +33,12 @@ public class Robot {
     public Facing getFacing() {
         return facing;
     }
+
+    public String getCurrentPosition() {
+        return xCoordinate + " " + yCoordinate + " " + getFacingStringValue();
+    }
+
+    private String getFacingStringValue() {
+        return facing.getFacingStringValue();
+    }
 }

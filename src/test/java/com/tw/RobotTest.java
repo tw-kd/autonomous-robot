@@ -20,8 +20,6 @@ public class RobotTest {
     @Test
     void shouldBeAbleToTurnRight() {
         Robot robot = new Robot(0, 1, Facing.E);
-        Facing facing = robot.getFacing();
-        System.out.println(facing);
         robot.turnRight();
         Facing actualFacing = robot.getFacing();
 

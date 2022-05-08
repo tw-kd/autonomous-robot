@@ -38,4 +38,18 @@ public enum Facing {
         }
         return null;
     }
+
+    public String getFacingStringValue() {
+        switch (this) {
+            case N:
+                return "N";
+            case S:
+                return "S";
+            case E:
+                return "E";
+            case W:
+                return "W";
+        }
+        return null;
+    }
 }
