@@ -12,9 +12,28 @@ public class RobotTest {
         Robot robot = new Robot(0, 0, Facing.N);
 
         robot.move();
-        int xCoordinate = robot.getXCoordiante();
-        int yCoordinate = robot.getYCoordiante();
+        int actualYCoordinate = robot.getYCoordiante();
 
-        assertThat(yCoordinate, is(equalTo(1)));
+        assertThat(actualYCoordinate, is(equalTo(1)));
+    }
+
+    @Test
+    void shouldBeAbleToTurnRight() {
+        Robot robot = new Robot(0, 1, Facing.E);
+
+        robot.turnRight();
+        Facing actualFacing = robot.getFacing();
+
+        assertThat(actualFacing, is(equalTo(Facing.S)));
+    }
+
+    @Test
+    void shouldBeAbleToTurnLeft() {
+        Robot robot = new Robot(0, 1, Facing.E);
+
+        robot.turnLeft();
+        Facing actualFacing = robot.getFacing();
+
+        assertThat(actualFacing, is(equalTo(Facing.N)));
     }
 }

@@ -34,4 +34,42 @@ public class Robot {
     public int getYCoordiante() {
         return yCoordinate;
     }
+
+    public void turnRight() {
+        switch (facing) {
+            case N:
+                facing = Facing.E;
+                break;
+            case E:
+                facing = Facing.S;
+                break;
+            case S:
+                facing = Facing.W;
+                break;
+            case W:
+                facing = Facing.N;
+                break;
+        }
+    }
+
+    public Facing getFacing() {
+        return facing;
+    }
+
+    public void turnLeft() {
+        switch (facing) {
+            case N:
+                facing = Facing.W;
+                break;
+            case E:
+                facing = Facing.N;
+                break;
+            case S:
+                facing = Facing.E;
+                break;
+            case W:
+                facing = Facing.S;
+                break;
+        }
+    }
 }
