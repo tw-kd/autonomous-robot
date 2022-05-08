@@ -12,7 +12,7 @@ public class RobotTest {
         Robot robot = new Robot(0, 0, Facing.N);
 
         robot.move();
-        int actualYCoordinate = robot.getYCoordiante();
+        int actualYCoordinate = robot.getYCoordinate();
 
         assertThat(actualYCoordinate, is(equalTo(1)));
     }
@@ -20,7 +20,8 @@ public class RobotTest {
     @Test
     void shouldBeAbleToTurnRight() {
         Robot robot = new Robot(0, 1, Facing.E);
-
+        Facing facing = robot.getFacing();
+        System.out.println(facing);
         robot.turnRight();
         Facing actualFacing = robot.getFacing();
 

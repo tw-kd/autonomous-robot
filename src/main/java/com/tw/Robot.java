@@ -12,64 +12,25 @@ public class Robot {
     }
 
     public void move() {
-        switch (facing) {
-            case N:
-                yCoordinate++;
-                break;
-            case E:
-                xCoordinate++;
-                break;
-            case S:
-                yCoordinate--;
-                break;
-            case W:
-                xCoordinate--;
-                break;
-        }
-    }
-
-    public int getXCoordiante() {
-        return xCoordinate;
-    }
-    public int getYCoordiante() {
-        return yCoordinate;
+        xCoordinate += facing.getXMovement();
+        yCoordinate += facing.getYMovement();
     }
 
     public void turnRight() {
-        switch (facing) {
-            case N:
-                facing = Facing.E;
-                break;
-            case E:
-                facing = Facing.S;
-                break;
-            case S:
-                facing = Facing.W;
-                break;
-            case W:
-                facing = Facing.N;
-                break;
-        }
-    }
-
-    public Facing getFacing() {
-        return facing;
+        facing = facing.getDirection("Right");
     }
 
     public void turnLeft() {
-        switch (facing) {
-            case N:
-                facing = Facing.W;
-                break;
-            case E:
-                facing = Facing.N;
-                break;
-            case S:
-                facing = Facing.E;
-                break;
-            case W:
-                facing = Facing.S;
-                break;
-        }
+        facing = facing.getDirection("Left");
+    }
+
+    public int getXCoordinate() {
+        return xCoordinate;
+    }
+    public int getYCoordinate() {
+        return yCoordinate;
+    }
+    public Facing getFacing() {
+        return facing;
     }
 }
