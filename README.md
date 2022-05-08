@@ -28,7 +28,7 @@ corresponding to the x and y co-ordinates and the robot's orientation.
 Each robot will be finished sequentially, which means that the second robot
 won't start to move until the first one has finished moving.
 
-OUTPUT<br/>
+OUTPUT:<br/>
 The output for each robot should be its final co-ordinates and heading.
 
 <hr/>
